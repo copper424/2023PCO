@@ -1,0 +1,146 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Sun Jan 14 10:35:53 2024
+| Host         : LAPTOP-2022R7 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
+| Design       : design_1_wrapper
+| Device       : xc7z010
+---------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    68 |
+|    Minimum number of control sets                        |    68 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    46 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    68 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     5 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     6 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     3 |
+| >= 16              |    52 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              60 |           33 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             490 |          176 |
+| Yes          | No                    | No                     |            1029 |          470 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             935 |          311 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------------------------+---------------------------------------------------------------------------------+------------------------------------------------------------------+------------------+----------------+--------------+
+|               Clock Signal               |                                  Enable Signal                                  |                         Set/Reset Signal                         | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------------------------+---------------------------------------------------------------------------------+------------------------------------------------------------------+------------------+----------------+--------------+
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/mem/slave/write_strobe_0                                  | io_reset_IBUF                                                    |                1 |              4 |         4.00 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/axi4_master/write_strobe_0                        | io_reset_IBUF                                                    |                2 |              4 |         2.00 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/uart/rx/cntReg[10]_i_1_n_0                                | design_1_i/Top_0/inst/uart/rx/cntReg[9]_i_1_n_0                  |                2 |              4 |         2.00 |
+|  design_1_i/clock_control_0/clk_out_BUFG |                                                                                 | design_1_i/Top_0/inst/bus_switch/dummy/master/ARVALID_i_1__1_n_0 |                2 |              5 |         2.50 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/uart/rx/cntReg[10]_i_1_n_0                                |                                                                  |                3 |              5 |         1.67 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/uart/tx/tx/shiftReg[0]_i_1_n_0                            | io_reset_IBUF                                                    |                3 |              8 |         2.67 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/timer/slave/addr[7]_i_1__1_n_0                            | io_reset_IBUF                                                    |                3 |              8 |         2.67 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/uart/rx/valReg                                            | io_reset_IBUF                                                    |                3 |              8 |         2.67 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/uart/rx/E[0]                                              | io_reset_IBUF                                                    |                4 |              8 |         2.00 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/uart/slave/addr[7]_i_1__0_n_0                             | io_reset_IBUF                                                    |                3 |              8 |         2.67 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/uart/tx/buf_/dataReg[7]_i_1_n_0                           | io_reset_IBUF                                                    |                2 |              8 |         4.00 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/uart/rx/cntReg[10]_i_1_n_0                                | design_1_i/Top_0/inst/uart/rx/cntReg[19]_i_1_n_0                 |                4 |             11 |         2.75 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/mem/slave/addr[14]_i_1__0_n_0                             | io_reset_IBUF                                                    |               11 |             13 |         1.18 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/rom_loader/master/E[0]                                    | io_reset_IBUF                                                    |                5 |             14 |         2.80 |
+|  design_1_i/clock_control_0/clk_out_BUFG |                                                                                 | design_1_i/Top_0/inst/uart/tx/tx/shiftReg[0]_i_1_n_0             |                5 |             15 |         3.00 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/axi4_master/addr                                  | io_reset_IBUF                                                    |                4 |             15 |         3.75 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/id2ex/instruction/reg__reg[21]_2[0]               | io_reset_IBUF                                                    |               12 |             32 |         2.67 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/axi4_master/read_valid                            | io_reset_IBUF                                                    |                9 |             32 |         3.56 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/clint/instruction_address                         | io_reset_IBUF                                                    |               10 |             32 |         3.20 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/E[0]                    |                                                                  |               10 |             32 |         3.20 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[0]_1[0]        |                                                                  |               17 |             32 |         1.88 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[0]_5[0]        |                                                                  |               10 |             32 |         3.20 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[1]_2[0]        |                                                                  |               11 |             32 |         2.91 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[1]_5[0]        |                                                                  |               20 |             32 |         1.60 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[2]_1[0]        |                                                                  |               15 |             32 |         2.13 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[2]_2[0]        |                                                                  |               23 |             32 |         1.39 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[2]_4[0]        |                                                                  |               20 |             32 |         1.60 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[2]_5[0]        |                                                                  |               12 |             32 |         2.67 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[2]_7[0]        |                                                                  |               14 |             32 |         2.29 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[0]_2[0]        |                                                                  |                7 |             32 |         4.57 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[2]_6[0]        |                                                                  |               14 |             32 |         2.29 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[3]_0[0]        |                                                                  |               24 |             32 |         1.33 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[3]_2[0]        |                                                                  |               11 |             32 |         2.91 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[3]_3[0]        |                                                                  |               10 |             32 |         3.20 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[3]_4[0]        |                                                                  |               14 |             32 |         2.29 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[2]_3[0]        |                                                                  |               14 |             32 |         2.29 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[3]_5[0]        |                                                                  |               15 |             32 |         2.13 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[0]_3[0]        |                                                                  |               26 |             32 |         1.23 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[1]_3[0]        |                                                                  |               18 |             32 |         1.78 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[0]_4[0]        |                                                                  |                9 |             32 |         3.56 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[1]_1[0]        |                                                                  |               18 |             32 |         1.78 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[0]_6[0]        |                                                                  |               10 |             32 |         3.20 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[1]_4[0]        |                                                                  |               14 |             32 |         2.29 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[3]_7[0]        |                                                                  |               25 |             32 |         1.28 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[4]_1[0]        |                                                                  |               14 |             32 |         2.29 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[3]_8[0]        |                                                                  |               15 |             32 |         2.13 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[3]_9[0]        |                                                                  |                7 |             32 |         4.57 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[4]_4[0]        |                                                                  |               13 |             32 |         2.46 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[3]_6[0]        |                                                                  |               15 |             32 |         2.13 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[4]_2[0]        |                                                                  |                9 |             32 |         3.56 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/mem2wb/regs_write_address/reg__reg[4]_3[0]        |                                                                  |               13 |             32 |         2.46 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/rom_loader/master/loading_reg_1[0]                        | io_reset_IBUF                                                    |                7 |             32 |         4.57 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/rom_loader/master/write_data[31]_i_1__3_n_0               | io_reset_IBUF                                                    |                7 |             32 |         4.57 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/id2ex/instruction/reg__reg[21]_3[0]               | io_reset_IBUF                                                    |               11 |             32 |         2.91 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/if2id/instruction/FSM_onehot_boot_state_reg[0][0] | io_reset_IBUF                                                    |                9 |             32 |         3.56 |
+|  design_1_i/clock_control_0/clk_out_BUFG |                                                                                 | design_1_i/Top_0/inst/timer/count[0]_i_1_n_0                     |                8 |             32 |         4.00 |
+|  design_1_i/clock_control_0/clk_out_BUFG |                                                                                 | design_1_i/Top_0/inst/led_count[0]_i_1_n_0                       |                8 |             32 |         4.00 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/id2ex/instruction/reg__reg[21]_4[0]               | io_reset_IBUF                                                    |               10 |             32 |         3.20 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/axi4_master/read_data[31]_i_2_n_0                 | design_1_i/Top_0/inst/cpu/cpu/axi4_master/read_data[31]_i_1_n_0  |               13 |             32 |         2.46 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/id2ex/instruction/reg__reg[21]_1[0]               | io_reset_IBUF                                                    |                7 |             32 |         4.57 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/id2ex/instruction/reg__reg[20]_1[0]               | io_reset_IBUF                                                    |                9 |             32 |         3.56 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/id2ex/instruction/reg__reg[21]_5[0]               | io_reset_IBUF                                                    |               13 |             32 |         2.46 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/timer/slave/E[0]                                          | io_reset_IBUF                                                    |               11 |             32 |         2.91 |
+|  design_1_i/clock_control_0/clk_out_BUFG |                                                                                 |                                                                  |               33 |             60 |         1.82 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/if2id/instruction/E[0]                            | io_reset_IBUF                                                    |               13 |             66 |         5.08 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/ex2mem/memory_write_enable/E[0]                   | io_reset_IBUF                                                    |               61 |            141 |         2.31 |
+|  design_1_i/clock_control_0/clk_out_BUFG | design_1_i/Top_0/inst/cpu/cpu/id2ex/regs_write_address/E[0]                     | io_reset_IBUF                                                    |               62 |            199 |         3.21 |
+|  design_1_i/clock_control_0/clk_out_BUFG |                                                                                 | io_reset_IBUF                                                    |              153 |            406 |         2.65 |
++------------------------------------------+---------------------------------------------------------------------------------+------------------------------------------------------------------+------------------+----------------+--------------+
+
+
